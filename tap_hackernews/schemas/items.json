@@ -2,7 +2,7 @@
     "type": "object",
     "properties": {
       "id": {
-            "type": "string",
+            "type": "integer",
             "description": "The item's unique id"
       },
       "deleted": {

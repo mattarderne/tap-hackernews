@@ -27,17 +27,12 @@ class Taphackernews(Tap):
             "start_item",
             th.StringType,
             required=True,
-            description="The token to authenticate against the API service"
-        ),
-        th.Property(
-            "start_date",
-            th.DateTimeType,
-            description="The earliest record date to sync"
+            description="The first item from the Hackernews API"
         ),
         th.Property(
             "api_url",
             th.StringType,
-            default="https://hacker-news.firebaseio.com/v0",
+            default="",
             description="The url for the API service"
         ),
     ).to_dict()
@@ -46,4 +41,12 @@ class Taphackernews(Tap):
         """Return a list of discovered streams."""
         return [stream_class(tap=self) for stream_class in STREAM_TYPES]
 
-cli =Taphackernews.cli
+# cli =Taphackernews.cli
+
+def printer():
+    print('TEST')
+
+printer()
+
+if __name__ == "__main__":
+    cli = Taphackernews.cli
