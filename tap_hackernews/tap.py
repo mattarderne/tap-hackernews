@@ -41,12 +41,4 @@ class Taphackernews(Tap):
         """Return a list of discovered streams."""
         return [stream_class(tap=self) for stream_class in STREAM_TYPES]
 
-# cli =Taphackernews.cli
-
-def printer():
-    print('TEST')
-
-printer()
-
-if __name__ == "__main__":
-    cli = Taphackernews.cli
+cli =Taphackernews.cli
