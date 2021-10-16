@@ -7,13 +7,16 @@ from singer_sdk import typing as th  # JSON schema typing helpers
 
 # TODO: Import your custom stream types here:
 from tap_hackernews.streams import (
-    hackernewsStream,
+    # hackernewsStream,
     ItemsStream,
+    MaxItemStream
 )
 # TODO: Compile a list of custom stream types here
 #       OR rewrite discover_streams() below with your custom logic.
 STREAM_TYPES = [
     ItemsStream,
+    MaxItemStream
+    # hackernewsStream,
 ]
 
 
@@ -21,12 +24,11 @@ class Taphackernews(Tap):
     """hackernews tap class."""
     name = "tap-hackernews"
 
-    # TODO: Update this section with the actual config values you expect:
     config_jsonschema = th.PropertiesList(
         th.Property(
             "start_item",
             th.StringType,
-            required=True,
+            required=False,
             description="The first item from the Hackernews API"
         ),
         th.Property(
@@ -35,6 +37,12 @@ class Taphackernews(Tap):
             default="",
             description="The url for the API service"
         ),
+        th.Property(
+            "api_url_format",
+            th.StringType,
+            default=".json",
+            description="The url requires a format to indicate what type of file to respond, currently only .json"
+        ),        
     ).to_dict()
 
     def discover_streams(self) -> List[Stream]:
@@ -42,3 +50,6 @@ class Taphackernews(Tap):
         return [stream_class(tap=self) for stream_class in STREAM_TYPES]
 
 cli =Taphackernews.cli
+
+if __name__ == "__main__":
+    Taphackernews.cli()

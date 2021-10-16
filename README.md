@@ -1,6 +1,6 @@
 # tap-hackernews
 
-`tap-hackernews` is a Singer tap for hackernews.
+`tap-hackernews` is a Singer tap for [hackernews API](https://hackernews.api-docs.io/v0/items/get-by-id).
 
 Built with the [Meltano Tap SDK](https://sdk.meltano.com) for Singer Taps.
 
@@ -24,10 +24,6 @@ tap is available by running:
 ```bash
 tap-hackernews --about
 ```
-
-### Source Authentication and Authorization
-
-- [ ] `Developer TODO:` If your tap requires special access on the source system, or any special authentication requirements, provide those here.
 
 ## Usage
 
