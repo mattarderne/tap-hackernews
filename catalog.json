@@ -1,0 +1,281 @@
+{
+  "streams": [
+    {
+      "tap_stream_id": "items",
+      "replication_method": "FULL_TABLE",
+      "key_properties": [
+        "item_id"
+      ],
+      "schema": {
+        "properties": {
+          "item_id": {
+            "description": "The item's unique id",
+            "type": "integer"
+          },
+          "deleted": {
+            "description": "true if the item is deleted.",
+            "type": "string"
+          },
+          "type": {
+            "description": "The type of item. One of job, story, comment, poll, or pollopt.",
+            "type": "string"
+          },
+          "by": {
+            "description": "The username of the item's author.",
+            "type": "string"
+          },
+          "time": {
+            "description": "Creation date of the item, in Unix Time.",
+            "type": "string"
+          },
+          "text": {
+            "description": "The comment, story or poll text. HTML.",
+            "type": "string"
+          },
+          "dead": {
+            "description": "true if the item is dead.",
+            "type": "string"
+          },
+          "parent": {
+            "description": "The comment's parent: either another comment or the relevant story.",
+            "type": "string"
+          },
+          "poll": {
+            "description": "The pollopt's associated poll.",
+            "type": "string"
+          },
+          "kids": {
+            "description": "The ids of the item's comments, in ranked display order.",
+            "type": "string"
+          },
+          "url": {
+            "description": "The URL of the story.",
+            "type": "string"
+          },
+          "score": {
+            "description": "The story's score, or the votes for a pollopt.",
+            "type": "string"
+          },
+          "title": {
+            "description": "The title of the story, poll or job. HTML.",
+            "type": "string"
+          },
+          "parts": {
+            "description": "A list of related pollopts, in display order.",
+            "type": "string"
+          },
+          "descendants": {
+            "description": "In the case of stories or polls, the total comment count.",
+            "type": "string"
+          },
+          "_links": {
+            "properties": {
+              "self": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "stream": "items",
+      "metadata": [
+        {
+          "breadcrumb": [
+            "properties",
+            "item_id"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "deleted"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "type"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "by"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "time"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "text"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "dead"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "parent"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "poll"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "kids"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "url"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "score"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "title"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "parts"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "descendants"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "_links"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "inclusion": "available",
+            "selected": true,
+            "table-key-properties": [
+              "item_id"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "tap_stream_id": "maxitem",
+      "replication_method": "FULL_TABLE",
+      "key_properties": [
+        "maxitem"
+      ],
+      "schema": {
+        "properties": {
+          "maxitem": {
+            "type": [
+              "number",
+              "null"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "stream": "maxitem",
+      "metadata": [
+        {
+          "breadcrumb": [
+            "properties",
+            "maxitem"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
+          }
+        },
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "inclusion": "available",
+            "selected": true,
+            "table-key-properties": [
+              "maxitem"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

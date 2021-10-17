@@ -9,13 +9,13 @@ from singer_sdk import typing as th  # JSON schema typing helpers
 from tap_hackernews.streams import (
     # hackernewsStream,
     ItemsStream,
-    MaxItemStream
+    # MaxItemStream
 )
 # TODO: Compile a list of custom stream types here
 #       OR rewrite discover_streams() below with your custom logic.
 STREAM_TYPES = [
     ItemsStream,
-    MaxItemStream
+    # MaxItemStream
     # hackernewsStream,
 ]
 

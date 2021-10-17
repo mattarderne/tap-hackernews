@@ -1,9 +1,9 @@
 {
     "type": "object",
     "properties": {
-      "id": {
+      "item_id": {
             "type": "integer",
-            "description": "The item's unique id"
+            "description": "The max id in hackernews right now id"
       }
     }
   }
